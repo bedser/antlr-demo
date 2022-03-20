@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+DIR=$(dirname $0)
+export CLASSPATH="$DIR/../antlr4/antlr-4.9.3-complete.jar:$DIR/java"
+/usr/bin/javac $DIR/java/*.java
+/usr/bin/java -Xmx500M org.antlr.v4.gui.TestRig classic_expression file_ -gui
